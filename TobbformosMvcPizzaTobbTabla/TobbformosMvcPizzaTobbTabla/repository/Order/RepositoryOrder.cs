@@ -39,7 +39,7 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
                 if(o.getDone())
                 pizzaDT.Rows.Add(o.getOrderId(), o.getCustomerId(), o.getCourierId(), o.getDate(), o.getTime(),"teljesítve");
                 else
-                    pizzaDT.Rows.Add(o.getOrderId(), o.getCustomerId(), o.getCourierId(), o.getDate(), o.getTime(), "nem teljesítve");
+                    pizzaDT.Rows.Add(o.getOrderId(), o.getCustomerId(), o.getCourierId(), o.getDate(), o.getTime(), "teljesítve");
 
             }
             return pizzaDT;
