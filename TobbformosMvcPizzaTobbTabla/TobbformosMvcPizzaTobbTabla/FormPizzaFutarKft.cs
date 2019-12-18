@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TobbbformosPizzaAlkalmazasTobbTabla.Repository;
 
 namespace TobbformosMvcPizzaTobbTabla
 {
     public partial class FormPizzaFutarKft : Form
     {
-
+        /// <summary>
+        /// Tárolja a pizzákat listában
+        /// </summary>
+        Repository repo = new Repository();
 
         public FormPizzaFutarKft()
         {
@@ -21,6 +24,7 @@ namespace TobbformosMvcPizzaTobbTabla
             beallitKezdoFormot();
         }
 
+     
         public void beallitKezdoFormot()
         {
             this.Size = new Size(1024, 768);
@@ -47,6 +51,6 @@ namespace TobbformosMvcPizzaTobbTabla
             tabControlPizzaFutarKFT.SelectTab("tabPageSzamlak");
         }
 
-        
+       
     }
 }

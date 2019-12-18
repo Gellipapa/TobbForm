@@ -32,20 +32,20 @@ USE `csarp`;
 
 CREATE TABLE `pfutar` (
   `fazon` int(3) NOT NULL DEFAULT '0',
-  `fnev` varchar(25) COLLATE latin2_hungarian_ci NOT NULL DEFAULT '',
-  `ftel` varchar(12) COLLATE latin2_hungarian_ci NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=latin2 COLLATE=latin2_hungarian_ci;
+  `fnev` varchar(15) CHARACTER SET latin2 COLLATE latin2_hungarian_ci NOT NULL DEFAULT '',
+  `ftel` varchar(15) CHARACTER SET latin2 COLLATE latin2_hungarian_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `pfutar`
 --
 
 INSERT INTO `pfutar` (`fazon`, `fnev`, `ftel`) VALUES
-(1, 'Hurrikán', '123456'),
-(2, 'Gyalogkakukk', '666666'),
-(3, 'Gömbvillám', '888888'),
-(4, 'Szélvész', '258369'),
-(5, 'Imperial', '987654');
+(1, 'István', '+36705468974'),
+(2, 'Anna', '+36202368874'),
+(3, 'Éva', '+36705468974'),
+(4, 'Ildikó', '+36305423974'),
+(5, 'József', '+36702108974');
 
 -- --------------------------------------------------------
 
@@ -55,9 +55,9 @@ INSERT INTO `pfutar` (`fazon`, `fnev`, `ftel`) VALUES
 
 CREATE TABLE `ppizza` (
   `pazon` int(3) NOT NULL DEFAULT '0',
-  `pnev` varchar(15) COLLATE latin2_hungarian_ci NOT NULL DEFAULT '',
+  `pnev` varchar(15) CHARACTER SET latin2 COLLATE latin2_hungarian_ci NOT NULL DEFAULT '',
   `par` int(4) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=latin2 COLLATE=latin2_hungarian_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `ppizza`
@@ -90,7 +90,7 @@ CREATE TABLE `prendeles` (
 --
 
 INSERT INTO `prendeles` (`razon`, `vazon`, `fazon`, `datum`, `ido`, `teljesites`) VALUES
-(1, 4, 2, '2010-10-01', 13.15, 0),
+(1, 4, 2, '2010-10-01', 13.15, 1),
 (2, 7, 2, '2010-10-01', 14.17, 0),
 (3, 1, 1, '2010-10-02', 11.07, 0),
 (4, 5, 2, '2010-10-02', 14.55, 0),
@@ -174,23 +174,21 @@ INSERT INTO `ptetel` (`razon`, `pazon`, `db`) VALUES
 --
 
 CREATE TABLE `pvevo` (
-  `vazon` int(6) NOT NULL DEFAULT '0',
-  `vnev` varchar(30) COLLATE latin2_hungarian_ci NOT NULL DEFAULT '',
-  `vcim` varchar(30) COLLATE latin2_hungarian_ci NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=latin2 COLLATE=latin2_hungarian_ci;
+  `vazon` int(3) NOT NULL DEFAULT '0',
+  `vnev` varchar(30) CHARACTER SET latin2 COLLATE latin2_hungarian_ci NOT NULL DEFAULT '',
+  `vcim` varchar(30) CHARACTER SET latin2 COLLATE latin2_hungarian_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `pvevo`
 --
 
 INSERT INTO `pvevo` (`vazon`, `vnev`, `vcim`) VALUES
-(1, 'Hapci', ''),
-(2, 'Vidor', ''),
-(3, 'Tudor', ''),
-(4, 'Kuka', ''),
-(5, 'Szende', ''),
-(6, 'Szundi', ''),
-(7, 'Morgó', '');
+(1, 'Hapci', 'Szeged'),
+(2, 'Vidor', 'Hódmezovásárhely'),
+(3, 'Tudor', 'Sándorfalva'),
+(4, 'Vesuvio', 'Szatymaz'),
+(5, 'Sorrento', 'Debrecen');
 
 --
 -- Indexek a kiírt táblákhoz

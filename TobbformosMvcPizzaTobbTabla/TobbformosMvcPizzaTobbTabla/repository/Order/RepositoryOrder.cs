@@ -23,8 +23,6 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
             this.orders = orders;
         }
 
-
-   
         public DataTable getOrderDataTableFromList()
         {
             DataTable pizzaDT = new DataTable();
@@ -36,11 +34,10 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
             pizzaDT.Columns.Add("teljesitve", typeof(string));
             foreach (Order o in orders)
             {
-                if(o.getDone())
-                pizzaDT.Rows.Add(o.getOrderId(), o.getCustomerId(), o.getCourierId(), o.getDate(), o.getTime(),"teljesítve");
+                if (o.getDone())
+                    pizzaDT.Rows.Add(o.getOrderId(), o.getCustomerId(), o.getCourierId(), o.getDate(), o.getTime(),"teljesítve");
                 else
-                    pizzaDT.Rows.Add(o.getOrderId(), o.getCustomerId(), o.getCourierId(), o.getDate(), o.getTime(), "teljesítve");
-
+                    pizzaDT.Rows.Add(o.getOrderId(), o.getCustomerId(), o.getCourierId(), o.getDate(), o.getTime(), "nem teljesítve");
             }
             return pizzaDT;
         }

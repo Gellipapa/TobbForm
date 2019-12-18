@@ -14,23 +14,23 @@ namespace TobbformosMvcPizzaTobbTabla
 {
     public partial class FormPizzaFutarKft : Form
     {
-        private void tabPageSzamlak_Click(object sender, EventArgs e)
-        {
-            beallitSzamlakTabPagetIndulaskor();
-        }
-
         private void tabControlPizzaFutarKFT_Selected(object sender, TabControlEventArgs e)
         {
             beallitSzamlakTabPagetIndulaskor();
+            feltoltComboBoxotMegrendelokkel();
+        }
+
+        private void feltoltComboBoxotMegrendelokkel()
+        {
+            comboBoxMegrendelok.DataSource = repo.getCustumersName();
         }
 
         private void beallitSzamlakTabPagetIndulaskor()
         {
             listViewRendelesek.Visible = false;
             labelRendelesek.Visible = false;
-            dataGridViewTetelek.Visible = false;
-            labelRendelesTetelei.Visible = false;
-
+            dataGridViewTelelek.Visible = false;
+            labelTelelek.Visible = false;
         }
     }
 }
