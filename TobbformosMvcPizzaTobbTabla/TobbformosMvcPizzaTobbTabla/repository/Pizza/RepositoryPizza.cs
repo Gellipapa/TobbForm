@@ -58,6 +58,8 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
             }
         }
 
+       
+
         public void deletePizzaFromList(int id)
         {
             Pizza p = pizzas.Find(x => x.getId() == id);
